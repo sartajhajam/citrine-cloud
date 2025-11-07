@@ -1,18 +1,30 @@
 'use client';
 
-import { Building2, Linkedin, Twitter, Facebook, Mail } from 'lucide-react';
+import { Building2, MapPin } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const socialLinks = [
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Mail, href: 'mailto:contact@cetrine.com', label: 'Email' },
-  ];
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   const footerLinks = {
+    Company: [
+      { name: 'About Us', id: 'about' },
+      { name: 'Our Team', id: 'about' },
+      { name: 'Contact', id: 'contact' },
+    ],
     Services: [
       'Process Development',
       'Document Management',
@@ -20,46 +32,32 @@ export function Footer() {
       'Business Support',
       'Technology Integration',
     ],
-    Company: ['About Us', 'Our Team', 'Careers', 'Blog', 'Contact'],
-    Resources: [
-      'Case Studies',
-      'White Papers',
-      'Documentation',
-      'Support',
-      'FAQ',
-    ],
   };
 
   return (
     <footer className="bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-          <div className="lg:col-span-2 space-y-6">
-            <div className="flex items-center space-x-3">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3 mb-4">
               <div className="bg-[#FFB800] p-2 rounded-lg">
                 <Building2 className="h-8 w-8 text-slate-900" />
               </div>
-              <span className="text-2xl font-bold">Cetrine</span>
+              <span className="text-2xl font-bold">Cetrine SC</span>
             </div>
-            <p className="text-slate-400 leading-relaxed max-w-md">
+            <p className="text-slate-400 leading-relaxed text-sm mb-4">
               Professional consulting and support company dedicated to helping
               organizations structure, optimize, and automate their internal
               processes.
             </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={index}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="bg-slate-800 p-3 rounded-lg hover:bg-[#FFB800] hover:text-slate-900 transition-colors"
-                  >
-                    <Icon className="h-5 w-5" />
-                  </a>
-                );
-              })}
+            <div className="flex items-start space-x-3">
+              <MapPin className="h-4 w-4 text-[#FFB800] mt-1 flex-shrink-0" />
+              <div className="text-slate-400 text-sm leading-relaxed">
+                <p>CORIMBA, ZONA 03</p>
+                <p>(PRÓXIMO AO BFA)</p>
+                <p>Município SAMBA</p>
+                <p>Província: LUANDA</p>
+              </div>
             </div>
           </div>
 
@@ -69,16 +67,29 @@ export function Footer() {
                 {category}
               </h3>
               <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-slate-400 hover:text-white transition-colors"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {links.map((link) => {
+                  const linkName = typeof link === 'string' ? link : link.name;
+                  const linkId = typeof link === 'object' ? link.id : null;
+                  return (
+                    <li key={linkName}>
+                      {linkId ? (
+                        <button
+                          onClick={() => scrollToSection(linkId)}
+                          className="text-slate-400 hover:text-white transition-colors text-left"
+                        >
+                          {linkName}
+                        </button>
+                      ) : (
+                        <a
+                          href="#"
+                          className="text-slate-400 hover:text-white transition-colors"
+                        >
+                          {linkName}
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
