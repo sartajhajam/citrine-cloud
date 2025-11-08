@@ -30,7 +30,7 @@ export function Footer() {
       'Document Management',
       'Accounting Consulting',
       'Business Support',
-      'Technology Integration',
+      'Custom Solutions',
     ],
   };
 
