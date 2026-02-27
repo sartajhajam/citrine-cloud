@@ -37,7 +37,7 @@ export function Contact() {
           <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg border border-slate-100">
             <div className="text-center mb-12">
               <h3 className="text-3xl font-bold text-slate-900 mb-4">
-                Let's Talk
+                Let&apos;s Talk
               </h3>
               <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
                 Ready to transform your business processes? Our team is here to

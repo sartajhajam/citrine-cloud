@@ -35,6 +35,7 @@ export function Navigation() {
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
     { name: 'Services', id: 'services' },
+    { name: 'Partners', id: 'partners' },
     { name: 'Contact', id: 'contact' },
   ];
 
