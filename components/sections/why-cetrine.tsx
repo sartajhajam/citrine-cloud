@@ -65,7 +65,7 @@ export function WhyCetrine() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.6 }}
           className="text-center space-y-6 mb-20 max-w-4xl mx-auto"
         >
@@ -86,7 +86,7 @@ export function WhyCetrine() {
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.15 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Card 

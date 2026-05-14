@@ -11,6 +11,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Cetrine Suporte e Services | Business Process Consulting & Documentation',
   description: 'Professional consulting and support company dedicated to helping organizations structure, optimize, and automate their internal processes.',
+  icons: {
+    icon: '/logo.jpeg',
+  },
 };
 
 export default function RootLayout({

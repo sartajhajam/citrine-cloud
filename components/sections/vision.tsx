@@ -42,7 +42,7 @@ export function Vision() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.6 }}
           className="space-y-6 mb-16"
         >
@@ -62,7 +62,7 @@ export function Vision() {
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl max-w-3xl mx-auto text-left"
         >
@@ -72,7 +72,7 @@ export function Vision() {
                 key={index} 
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.15 }}
                 transition={{ delay: 0.4 + (index * 0.1) }}
                 className="flex items-start gap-4"
               >
@@ -88,7 +88,7 @@ export function Vision() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-16 inline-block bg-gradient-to-r from-indigo-500/10 to-cyan-500/10 border border-indigo-500/20 rounded-2xl px-8 py-6 backdrop-blur-sm"
         >
