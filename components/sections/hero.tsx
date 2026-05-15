@@ -3,8 +3,10 @@
 import { ArrowRight, Cpu, Layers, BarChart, Workflow, Database, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 export function Hero() {
+  const t = useTranslations('Hero');
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
@@ -57,14 +59,11 @@ export function Hero() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-              The Future of Business Is{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-teal-500">
-                Fully Automated
-              </span>
+              {t('title')}
             </h1>
 
             <p className="text-xl text-slate-600 leading-relaxed max-w-2xl font-light">
-              Cetrine builds AI-powered ecosystems that automate infrastructure, workflows, reporting, and internal business intelligence, transforming manual operations into smart, scalable, self-operating systems.
+              {t('subtitle')}
             </p>
 
             <div className="space-y-4 pt-2">
@@ -82,7 +81,7 @@ export function Hero() {
                 onClick={scrollToContact}
                 className="bg-blue-700 hover:bg-blue-600 text-white font-semibold text-lg px-8 py-7 group shadow-[0_0_40px_rgba(29,78,216,0.3)] hover:shadow-[0_0_60px_rgba(29,78,216,0.5)] transition-all rounded-xl"
               >
-                Start Your Transformation
+                {t('cta') || 'Start Your Transformation'}
                 <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>

@@ -4,8 +4,11 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { useTranslations } from 'next-intl';
 
 export function Navigation() {
+  const t = useTranslations('Navigation');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -33,11 +36,11 @@ export function Navigation() {
   };
 
   const navLinks = [
-    { name: 'Home', id: 'home' },
-    { name: 'About', id: 'about' },
-    { name: 'Services', id: 'services' },
-    { name: 'Why Us', id: 'why-cetrine' },
-    { name: 'Vision', id: 'vision' },
+    { name: t('home') || 'Home', id: 'home' },
+    { name: t('about') || 'About', id: 'about' },
+    { name: t('services') || 'Services', id: 'services' },
+    { name: t('whyUs') || 'Why Us', id: 'why-cetrine' },
+    { name: t('vision') || 'Vision', id: 'vision' },
   ];
 
   return (
@@ -73,11 +76,14 @@ export function Navigation() {
                 {link.name}
               </button>
             ))}
+            <div className="ml-2">
+              <LanguageSwitcher />
+            </div>
             <Button
               onClick={() => scrollToSection('contact')}
               className="ml-4 bg-blue-700 hover:bg-blue-600 text-white font-semibold shadow-[0_0_20px_rgba(29,78,216,0.2)] hover:shadow-[0_0_30px_rgba(29,78,216,0.4)] transition-all rounded-xl"
             >
-              Start Transformation
+              {t('startTransformation') || 'Start Transformation'}
             </Button>
           </div>
 
@@ -97,6 +103,9 @@ export function Navigation() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-slate-200 shadow-xl absolute w-full">
           <div className="px-4 py-6 space-y-3">
+            <div className="pb-2 border-b border-slate-100">
+              <LanguageSwitcher />
+            </div>
             {navLinks.map((link) => (
               <button
                 key={link.id}
@@ -111,7 +120,7 @@ export function Navigation() {
                 onClick={() => scrollToSection('contact')}
                 className="w-full bg-blue-700 hover:bg-blue-600 text-white font-semibold rounded-xl"
               >
-                Start Transformation
+                {t('startTransformation') || 'Start Transformation'}
               </Button>
             </div>
           </div>

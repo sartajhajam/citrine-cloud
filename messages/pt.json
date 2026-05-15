@@ -1,0 +1,15 @@
+{
+  "Navigation": {
+    "home": "Início",
+    "about": "Sobre",
+    "services": "Serviços",
+    "whyUs": "Por Que Nós",
+    "vision": "Visão",
+    "startTransformation": "Iniciar Transformação"
+  },
+  "Hero": {
+    "title": "O Futuro dos Negócios É Totalmente Automatizado",
+    "subtitle": "A Cetrine constrói ecossistemas impulsionados por IA que automatizam infraestrutura, fluxos de trabalho, relatórios e inteligência de negócios interna, transformando operações manuais em sistemas inteligentes, escaláveis e autônomos.",
+    "cta": "Comece Sua Transformação"
+  }
+}

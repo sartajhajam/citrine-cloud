@@ -1,0 +1,15 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "whyUs": "Why Us",
+    "vision": "Vision",
+    "startTransformation": "Start Transformation"
+  },
+  "Hero": {
+    "title": "The Future of Business Is Fully Automated",
+    "subtitle": "Cetrine builds AI-powered ecosystems that automate infrastructure, workflows, reporting, and internal business intelligence, transforming manual operations into smart, scalable, self-operating systems.",
+    "cta": "Start Your Transformation"
+  }
+}
